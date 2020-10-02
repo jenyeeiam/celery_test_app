@@ -1,8 +1,5 @@
-from celery import Celery
-from time import sleep
+from celery_app import .app
 
-app = Celery('tasks', backend='rpc://', broker='amqp://localhost')
-# where does rpc:// live and why?
 
 @app.task
 def add(x, y):
